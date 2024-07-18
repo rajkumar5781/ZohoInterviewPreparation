@@ -53,10 +53,10 @@ public class Main {
                 tempLifts.add(lifts[i]);
                 index = i;
                 nearest = Math.abs(lifts[i].getFloor()-from);
-                if(lifts[i].getRestrictFloor()!=null) {
+//                if(lifts[i].getRestrictFloor()!=null) {
                     stops = stopsCount(lifts[i], from, to);
-                    System.out.println(stops);
-                }
+//                    System.out.println(stops);
+//                }
             }
 //            nearest==Math.abs(lifts[i].getFloor()-from) &&
             else if(((lifts[i].getRestrictFloor()!=null && !lifts[i].getRestrictFloor().contains(from) && !lifts[i].getRestrictFloor().contains(to) && stops==stopsCount(lifts[i],from,to)) || lifts[i].getRestrictFloor()==null && stops==stopsCount(lifts[i],from,to))){
