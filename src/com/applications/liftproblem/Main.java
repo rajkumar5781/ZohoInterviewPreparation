@@ -18,11 +18,11 @@ public class Main {
         lifts = new Lift[liftCount];
         initializedLifts();
         Lift.printLifts(lifts);
-        lifts[0].setRestrictFloor(new ArrayList<>(){{add(6);add(7);add(8);add(9);add(10);}});
-        lifts[1].setRestrictFloor(new ArrayList<>(){{add(6);add(7);add(8);add(9);add(10);}});
-        lifts[2].setRestrictFloor(new ArrayList<>(){{add(1);add(2);add(3);add(4);add(5);}});
-        lifts[3].setRestrictFloor(new ArrayList<>(){{add(1);add(2);add(3);add(4);add(5);}});
-        lifts[0].setMaintenance(true);
+        lifts[0].setRestrictFloor(new ArrayList<>(){{add(3);add(5);}});
+        lifts[1].setRestrictFloor(new ArrayList<>(){{add(4);add(6);}});
+//        lifts[2].setRestrictFloor(new ArrayList<>(){{add(1);add(2);add(3);add(4);add(5);}});
+//        lifts[3].setRestrictFloor(new ArrayList<>(){{add(1);add(2);add(3);add(4);add(5);}});
+//        lifts[0].setMaintenance(true);
         while(true){
             System.out.println("Enter the from position:");
             int form = sc.nextInt();
@@ -82,6 +82,23 @@ public class Main {
         int count = 0,start=from;
         if(lifts.getRestrictFloor()!=null && (lifts.getRestrictFloor().contains(start) || lifts.getRestrictFloor().contains(to))){
             return -1;
+        }
+        int floor = lifts.getFloor();
+        if(from>floor) {
+            while (from > floor) {
+                floor++;
+                if (lifts.getRestrictFloor() == null || !lifts.getRestrictFloor().contains(floor)) {
+                    count++;
+                }
+            }
+        }
+        else if(floor>from){
+            while (from < floor) {
+                floor--;
+                if (lifts.getRestrictFloor() == null || !lifts.getRestrictFloor().contains(floor)) {
+                    count++;
+                }
+            }
         }
         if(from>to) {
             while (start > to) {
