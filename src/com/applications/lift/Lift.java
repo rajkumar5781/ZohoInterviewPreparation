@@ -1,4 +1,4 @@
-package com.applications.liftproblem;
+package com.applications.lift;
 
 import java.util.List;
 
@@ -8,6 +8,7 @@ public class Lift {
     private int liftNum;
     private boolean isMaintenance = false;
     private int numOfPerson=5;
+    private int tempFloor=0;
     private int personCount;
 
     public int getFloor() {
@@ -26,14 +27,6 @@ public class Lift {
         this.restrictFloor = restrictFloor;
     }
 
-    public int getPersonCount() {
-        return personCount;
-    }
-
-    public void setPersonCount(int personCount) {
-        this.personCount = personCount;
-    }
-
     public Lift(int floor, List<Integer> restrictFloor) {
         this.floor = floor;
         this.restrictFloor = restrictFloor;
@@ -42,7 +35,6 @@ public class Lift {
     public Lift(int floor,int liftNum) {
         this.floor = floor;
         this.liftNum = liftNum;
-        this.personCount = 0;
     }
 
     public Lift(int floor,int liftNum,boolean isMaintenance) {
@@ -52,6 +44,15 @@ public class Lift {
         if(isMaintenance){
             this.floor = -1;
         }
+        this.tempFloor = 0;
+    }
+
+    public int getTempFloor() {
+        return tempFloor;
+    }
+
+    public void setTempFloor(int tempFloor) {
+        this.tempFloor = tempFloor;
     }
 
     public int getLiftNum() {
@@ -79,6 +80,14 @@ public class Lift {
 
     public void setNumOfPerson(int numOfPerson) {
         this.numOfPerson = numOfPerson;
+    }
+
+    public int getPersonCount() {
+        return personCount;
+    }
+
+    public void setPersonCount(int personCount) {
+        this.personCount = personCount;
     }
 
     public static void printLifts(Lift[] lifts){
