@@ -58,16 +58,12 @@ public class Main {
             customerHashMap.put(id,customer);
             List<Booking> bookingList = new ArrayList<>(taxis[index].getBookingList());
             bookingList.add(booking);
-//            customerList.add(customer);
             taxis[index].setTotalEarning(taxis[index].getTotalEarning()+amount);
-//            taxis[index].setCustomerList(customerList);
             taxis[index].setBookingList(bookingList);
             if(taxis[index].getAvailableTime()==-1){
                 taxis[index].setAvailableTime(pickPoint-65);
             }
             taxis[index].setCurrentPoint(dropPoint-65);
-//            (booking.getPikcUpTime()+Math.abs(booking.getPickUpPoint()-booking.getDropPoint()))
-//            taxis[index].getAvailableTime()+Math.abs((pickPoint-65)-(dropPoint-65))
             taxis[index].setAvailableTime((booking.getPikcUpTime()+Math.abs(booking.getPickUpPoint()-booking.getDropPoint())));
             System.out.println("Taxi can be allotted.");
             System.out.println("Taxi-"+(index+1)+" is allotted");

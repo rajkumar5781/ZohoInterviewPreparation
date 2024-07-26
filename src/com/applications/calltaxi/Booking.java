@@ -11,12 +11,6 @@ public class Booking extends Customer{
         this.bookingId = bookingId;
     }
 
-//    public Booking(int customerId, char pickUpPoint, char dropPoint, int pikcUpTime, int travelAmount,int bookingId) {
-//        super(customerId, pickUpPoint, dropPoint, pikcUpTime, travelAmount,bookingId);
-//        this.bookingId = bookingId;
-//
-//    }
-
     public Booking(int customerId, char pickUpPoint, char dropPoint, int pikcUpTime, int travelAmount, int bookingId) {
         super(customerId, pickUpPoint, dropPoint, pikcUpTime, travelAmount);
         this.bookingId = bookingId;
