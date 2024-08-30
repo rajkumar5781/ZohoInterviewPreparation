@@ -3,8 +3,8 @@ package com.applications.snakeandladder;
 public class Player {
     private int[] position;
 
-    public Player(int[] position) {
-        this.position = position;
+    public Player(int[] values) {
+        this.position = values;
     }
 
     public int[] getPosition() {
