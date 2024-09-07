@@ -175,10 +175,7 @@ public class Main {
         return path.getList();
     }
     public static boolean check(int x,int y,boolean[][] tempArray){
-        if(x>-1 && x<tempArray.length){
-            return true;
-        }
-        return false;
+        return x > -1 && x < tempArray.length;
     }
     public static void printSnake(){
         for(int i=0;i<boardSize;i++){

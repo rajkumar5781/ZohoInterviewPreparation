@@ -192,6 +192,10 @@ public class Main {
 //            seats.add(allocateSeats.get(i));
 //        }
 
+        String s = "";
+//        s.split()
+        HashSet<Integer> set = new HashSet<>();
+        SortedMap<Integer,Integer> map = new TreeMap<>();
         ArrayList<Integer> seats = new ArrayList<>();
         ConfiremedPassangers[] confiremedPassangers = new ConfiremedPassangers[passangers.length];
         int count = 0;
